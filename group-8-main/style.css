@@ -200,7 +200,7 @@ p {
 
 /* Hero Section */
 #hero {
-	background-image: url(./img/africanbank.jpg);
+	background-image: url("./img/back6.jpg");
 	background-size: cover;
 	background-position: top center;
 	position: relative;
@@ -564,6 +564,7 @@ p {
 		font-weight: 500;
 	}
 }
+
 /* End Keyframes */
 
 /* Media Query For Tablet */
@@ -698,6 +699,9 @@ p {
 	#services .service-bottom .service-item {
 		flex-basis: 22%;
 		margin: 1.5%;
+	}
+	.section {
+		background-color: cornflowerblue;
 	}
 }
 /* End  Media Query For Desktop */
