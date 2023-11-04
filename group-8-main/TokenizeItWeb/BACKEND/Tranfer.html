@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ganache Account Information</title>
+</head>
+<body>
+    <h1>Ganache Account Information</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Account 09</th>
+                <th>Balance (ETH)</th>
+              
+            </tr>
+        </thead>
+        <tbody id="accountTable"></tbody>
+    </table>
+    <p>enter the amount you want to transfer</p>
+    <!--<input type="text" id="Sender" placeholder="Enter the sender number">-->
+    <input type="text" id="reciever" placeholder="Enter  the receiver number">
+    <input type="text" id="textInput" placeholder="Enter text here">
+    <button onclick="getUserInput()">Get Input</button>
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.5.2/dist/web3.min.js"></script>
+    <script>
+        // Specify the URL of your Ganache instance (default: http://localhost:7545)
+        const ganacheUrl = 'http://127.0.0.1:7545';
+
+        // Create a new Web3 instance, connecting to Ganache
+        const web3 = new Web3(ganacheUrl);
+
+        // Retrieve all accounts
+        web3.eth.getAccounts()
+            .then(async (accounts) => {
+                const accountTable = document.getElementById('accountTable');
+                for (const account of accounts) {
+                    const balance = await web3.eth.getBalance(account);
+                    const balanceInEther = web3.utils.fromWei(balance, 'ether');
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${account}</td>
+                        <td>${balanceInEther} ETH</td>
+                    `;
+                    accountTable.appendChild(row);
+                }
+            })
+            .catch((error) => {
+                console.error('Error retrieving accounts:', error);
+            });
+            
+const contractABI =[
+	{
+		"inputs": [],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_index",
+				"type": "uint256"
+			}
+		],
+		"name": "buyTicket",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "owner",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "tickets",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "id",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "price",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "owner",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}] ;
+const accountNumbers = [  ,
+  '0xa513c38d7E277961fF99643C6984C8bDeA1e719B',
+  '0x0a59B30AA144150f89Fb38792Fa73Cf6457A3A7B',
+  '0x5229F4f15Cd52B57096a7EBe914bB72D57e0Fa56',
+  '0x9C36B00731b28204554C7DBA81576e3d2D52ccac',
+  '0xcd484E905C01958fe7d8dD065E848739f0817F7D',
+  '0x19d2c3d9F8Bc8A55e56De0bd65e788f8532CD420',
+  '0x9fdaA79058A120Cb9819246339276878643121d4',
+  '0x865062A96f4951B509831dF56a87aED0f1fC2339',
+  '0xc1791333A0C7c0380f635282e76e5627B5e9C071'
+];
+const accountNames = [
+  'User1', 
+  'User2', 
+  'User3', 
+  'User4', 
+  'User5', 
+  'User6', 
+  'User7', 
+  'User8', 
+  'User9', 
+];
+
+const account = [
+  '0xa75cc6b2889878f099e029917bf4cd7d492b8e5b85743b36b4d68b2e341d9d34',
+  '0x8fda98ab76cd5de52a1e3bf7cc8fc34c652f4928c3f1c0dc38038af3bb68f282',
+  '0xa8726c41d986b1c4e26245aa43925a0c0fc18570e9b75e64ce4c8f4bdb831927',
+  '0xf55cb4f58ada0fad2b8eddbd92e1dc35af439289298bcb0fc55ef35152d43afe',
+  '0x3458ca80f2ceb5845fcef8cfae3d25ffb7e719433c3f56247b5b45e04966cb3a',
+  '0x9314944f6170e84611fedc3984adc8be5bf1ee9c63d5a53d854ff21b36edd512',
+  '0x93630647d728c2146861d5c31b1381b0b4921a08107692cece8c09d0af41a844',
+  '0xa8726c41d986b1c4e26245aa43925a0c0fc18570e9b75e64ce4c8f4bdb831927',
+  '0xa8726c41d986b1c4e26245aa43925a0c0fc18570e9b75e64ce4c8f4bdb831927',
+  '0xa8726c41d986b1c4e26245aa43925a0c0fc18570e9b75e64ce4c8f4bdb831927'
+];
+
+//const contractAddress = '0xf4dE3cD020F2F5Af99923023Af2d0E1E37cD9CA1';//sender addders
+//const contractAddress =account09[document.getElementById('sender').value];
+const senderId = '0xf4dE3cD020F2F5Af99923023Af2d0E1E37cD9CA1';
+const receiverId = document.getElementById('receiver').value;
+const userInput = document.getElementById('textInput').value;
+
+async function buyTicket() {
+  try {
+    const nonce = await web3.eth.getTransactionCount(senderAddress);
+    const gasPriceInWei = web3.utils.toWei('100', 'gwei');
+    const txObject = {
+      from: senderAddress,
+      to: contractAddress,
+      nonce: nonce,
+      gasPrice: gasPriceInWei,
+      gasLimit: web3.utils.toHex(21192),
+      data: contract.methods.buyTicket(_indexToBuy).encodeABI(),
+      value: transferAmount,
+    };
+
+    const signedTx = await web3.eth.accounts.signTransaction(txObject, privateKey);
+    const txReceipt = await web3.eth.sendSignedTransaction(signedTx.rawTransaction);
+
+    console.log(`Ticket purchased successfully.`);
+    const userInput = document.getElementById('textInput');
+    const userInput1 = userInput.value;
+    let sendAmountInWei =null;
+    if (userInput !== null) {
+                // Display the user input in the HTML
+               sendAmountInWei = web3.utils.toWei(userInput1, 'ether'); 
+               web3.utils.toWei(transferAmount, 'ether');
+            }
+    // Check if the ticket purchase was successful (you can add your own condition here)
+    if (txReceipt.status) {
+      // If the purchase was successful, send the amount to the receiver
+      if (userInput === null) {
+       sendAmountInWei = web3.utils.toWei('1', 'ether'); // Adjust the amount as needed
+      }
+      const sendTransaction = await web3.eth.sendTransaction({
+        from: senderAddress,
+        to: recipientAddress,
+        value: sendAmountInWei,
+        gasPrice: gasPriceInWei,
+        gasLimit: web3.utils.toHex(21192),
+      });
+      console.log(`Amount sent to receiver: ${sendTransaction.transactionHash}`);
+    } else {
+      console.error('Ticket purchase failed.');
+    }
+  } catch (error) {
+    console.error('Error purchasing ticket:', error);
+  }
+}
+
+
+function getUserInput() {
+  if (senderId !== null && receiverId !== null && userInput !== null ) { 
+    const contractAddress = accountNumbers[senderId];
+    const senderAddress = accountNumbers[senderId];
+    const recipientAddress = accountNumbers[receiverId];
+    const privateKey = account[senderId];
+    const contract = new web3.eth.Contract(contractABI, contractAddress);
+
+    //const senderAddress = '0xf4dE3cD020F2F5Af99923023Af2d0E1E37cD9CA1'; // Replace with the sender's Ethereum address
+    //const senderAddress = account09[document.getElementById('sender').value];
+    //const recipientAddress = '0x5229F4f15Cd52B57096a7EBe914bB72D57e0Fa56'; // Replace with the recipient's Ethereum address
+    //const recipientAddress = account09[document.getElementById('reciever').value];
+    //const privateKey = '0xa75cc6b2889878f099e029917bf4cd7d492b8e5b85743b36b4d68b2e341d9d34'; // Replace with the sender's private key
+    //const privateKey =account[document.getElementById('sender').value];
+
+    web3.eth.accounts.wallet.add(privateKey);
+
+    //debugger;
+    const transferAmount = web3.utils.toWei('50', 'ether'); // 1 ETH as an example; adjust as needed
+
+    // Specify the index of the ticket you want to buy
+    const _indexToBuy = 0; // Adjust this to the index of the ticket you want to buy
+    // Check if the user provided input (not canceled)
+    const userInput = document.getElementById('textInput');
+
+    function getUserInput() {
+      if (userInput !== null) {
+            // Display the user input in the HTML
+            buyTicket();
+      }
+    }
+  }
+}
+    </script>
+</body>
+</html>

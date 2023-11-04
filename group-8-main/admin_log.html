@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Household Signin</title>
+    <link rel="stylesheet" href="admin_log.css">
+    <!--<link rel="stylesheet" href="./CustomerForm.html">-->
+    <script defer src="signin.css"></script>
+</head>
+<body>
+
+    <header>
+
+        <input type="button" value="Back" class="btn type2-btn" id="back-btn">
+        
+        <img src="/assets/images/afri_bankLogo.png" alt="" width="50">
+
+        <input type="button" value="Sign Up" class="btn type1-btn" id="to-signup-btn">
+
+    </header>
+
+    <main>
+
+        <form action="../features.html" class="form">
+
+            <img src="img/download.png" alt="Logo" width="100">
+    
+            <label for="username">Username</label>
+            <input type="text" name="" id="username" class="input" autocomplete="off">
+    
+            <label for="password">pin</label>
+            <input type="number" name="" id="number" class="input">
+    
+            <input type="button" value="Forgot pin?" id="forgot-password">
+    
+            <!--<input type="button" value="Sign In" id="sign-in-btn" class="btn type1-btn">-->
+            <button type="button"  id="sign-in-btn" class="btn type1-btn"><a href="admin.html">Sign In</a></button>
+            
+        </form>
+
+    </main>
+    
+</body><!--
+<script>
+    // Function to handle form submission
+    function handleSignUp(event) {
+      event.preventDefault();  // Prevents the default form submission behavior
+      alert('Sign-in Successfully!');
+    }
+
+    // Get the button element by its ID
+    const signUpButton = document.getElementById('sign-in-btn');
+
+    // Attach an event listener to the button
+    signUpButton.addEventListener('click', handleSignUp);
+  </script>-->
+</html>

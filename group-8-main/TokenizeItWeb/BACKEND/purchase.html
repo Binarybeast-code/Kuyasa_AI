@@ -1,0 +1,166 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ganache Account Information</title>
+</head>
+<body>
+    <h1>Ganache Account Information</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Account 09</th>
+                <th>Balance (ETH)</th>
+            </tr>
+        </thead>
+        <tbody id="accountTable"></tbody>
+    </table>
+
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.5.2/dist/web3.min.js"></script>
+    <script>
+        // Specify the URL of your Ganache instance (default: http://localhost:7545)
+        const ganacheUrl = 'http://127.0.0.1:7545';
+
+        // Create a new Web3 instance, connecting to Ganache
+        const web3 = new Web3(ganacheUrl);
+
+        // Retrieve all accounts
+        web3.eth.getAccounts()
+            .then(async (accounts) => {
+                const accountTable = document.getElementById('accountTable');
+                for (const account of accounts) {
+                    const balance = await web3.eth.getBalance(account);
+                    const balanceInEther = web3.utils.fromWei(balance, 'ether');
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${account}</td>
+                        <td>${balanceInEther} ETH</td>
+                    `;
+                    accountTable.appendChild(row);
+                }
+            })
+            .catch((error) => {
+                console.error('Error retrieving accounts:', error);
+            });
+const contractABI =[
+	{
+		"inputs": [],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_index",
+				"type": "uint256"
+			}
+		],
+		"name": "buyTicket",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "owner",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "tickets",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "id",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "price",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "owner",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}] ;
+const contractAddress = '0xf4dE3cD020F2F5Af99923023Af2d0E1E37cD9CA1';
+const contract = new web3.eth.Contract(contractABI, contractAddress);
+
+const senderAddress = '0xf4dE3cD020F2F5Af99923023Af2d0E1E37cD9CA1'; // Replace with the sender's Ethereum address
+const recipientAddress = '0x5229F4f15Cd52B57096a7EBe914bB72D57e0Fa56'; // Replace with the recipient's Ethereum address
+
+const privateKey = '0xa75cc6b2889878f099e029917bf4cd7d492b8e5b85743b36b4d68b2e341d9d34'; // Replace with the sender's private key
+web3.eth.accounts.wallet.add(privateKey);
+//debugger;
+const transferAmount = web3.utils.toWei('50', 'ether'); // 1 ETH as an example; adjust as needed
+
+async function buyTicket() {
+  try {
+    const nonce = await web3.eth.getTransactionCount(senderAddress);
+    const gasPriceInWei = web3.utils.toWei('0.5', 'ether');
+    const txObject = {
+      from: senderAddress,
+      to: contractAddress,
+      nonce: nonce,
+      gasPrice: gasPriceInWei,
+      gasLimit: web3.utils.toHex(21192),
+      data: contract.methods.buyTicket(_indexToBuy).encodeABI(),
+      value: transferAmount,
+    };
+
+    const signedTx = await web3.eth.accounts.signTransaction(txObject, privateKey);
+    const txReceipt = await web3.eth.sendSignedTransaction(signedTx.rawTransaction);
+
+    console.log(`Ticket purchased successfully.`);
+
+    // Check if the ticket purchase was successful (you can add your own condition here)
+    if (txReceipt.status) {
+      // If the purchase was successful, send the amount to the receiver
+      const sendAmountInWei = web3.utils.toWei('1', 'ether'); // Adjust the amount as needed
+      const sendTransaction = await web3.eth.sendTransaction({
+        from: senderAddress,
+        to: recipientAddress,
+        value: sendAmountInWei,
+        gasPrice: gasPriceInWei,
+        gasLimit: web3.utils.toHex(21192),
+      });
+      console.log(`Amount sent to receiver: ${sendTransaction.transactionHash}`);
+    } else {
+      console.error('Ticket purchase failed.');
+    }
+  } catch (error) {
+    console.error('Error purchasing ticket:', error);
+  }
+}
+
+
+// Specify the index of the ticket you want to buy
+const _indexToBuy = 0; // Adjust this to the index of the ticket you want to buy
+
+buyTicket();
+
+    </script>
+</body>
+</html>

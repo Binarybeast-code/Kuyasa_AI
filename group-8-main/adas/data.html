@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Stock Watchlist</title>
+    <style>
+        /* Basic CSS for styling */
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .price-up {
+            color: green;
+        }
+
+        .price-down {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Live Stock Watchlist</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Company</th>
+                <th>Price</th>
+                <th>Change</th>
+            </tr>
+        </thead>
+        <tbody id="watchlist">
+            <!-- Placeholder rows for stock data -->
+            <!-- You can copy and paste the following row to create more rows -->
+            <tr>
+                <td>AAPL</td>
+                <td>Apple Inc.</td>
+                <td id="AAPL-price">$150.00</td>
+                <td id="AAPL-change" class="price-up">+5.00</td>
+            </tr>
+            <tr>
+                <td>GOOGL</td>
+                <td>Alphabet Inc.</td>
+                <td id="GOOGL-price">$2500.00</td>
+                <td id="GOOGL-change" class="price-down">-10.00</td>
+            </tr>
+            <!-- Add more rows for additional stock symbols -->
+            <tr>
+                <td>MSFT</td>
+                <td>Microsoft Corporation</td>
+                <td id="MSFT-price">$300.00</td>
+                <td id="MSFT-change" class="price-up">+7.50</td>
+            </tr>
+            <tr>
+                <td>AMZN</td>
+                <td>Amazon.com, Inc.</td>
+                <td id="AMZN-price">$3400.00</td>
+                <td id="AMZN-change" class="price-up">+12.00</td>
+            </tr>
+            <!-- Add more rows as needed -->
+            <!-- You can copy and paste the above rows to create a total of 20 rows -->
+        </tbody>
+    </table>
+
+    <script>
+        // Simulated data updates (replace with real data source)
+        setInterval(() => {
+            updateStockData('AAPL', getRandomPrice(), getRandomChange());
+            updateStockData('GOOGL', getRandomPrice(), getRandomChange());
+            updateStockData('MSFT', getRandomPrice(), getRandomChange());
+            updateStockData('AMZN', getRandomPrice(), getRandomChange());
+            // Add more symbols and data updates as needed
+        }, 5000); // Update every 5 seconds
+
+        function updateStockData(symbol, price, change) {
+            const priceElement = document.getElementById(`${symbol}-price`);
+            const changeElement = document.getElementById(`${symbol}-change`);
+
+            priceElement.textContent = `$${price.toFixed(2)}`;
+
+            if (change > 0) {
+                changeElement.textContent = `+${change.toFixed(2)}`;
+                changeElement.classList.add('price-up');
+                changeElement.classList.remove('price-down');
+            } else if (change < 0) {
+                changeElement.textContent = `${change.toFixed(2)}`;
+                changeElement.classList.remove('price-up');
+                changeElement.classList.add('price-down');
+            } else {
+                changeElement.textContent = `${change.toFixed(2)}`;
+                changeElement.classList.remove('price-up', 'price-down');
+            }
+        }
+
+        function getRandomPrice() {
+            return Math.random() * (200 - 100) + 100; // Simulated price between 100 and 200
+        }
+
+        function getRandomChange() {
+            return Math.random() * (10 - (-10)) - 10; // Simulated change between -10 and 10
+        }
+    </script>
+</body>
+</html>

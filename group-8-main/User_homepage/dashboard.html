@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learner's Dashboard</title>
+    <link rel="stylesheet" href="./css/dashboard.css">
+    <script defer src="/User_homepage/scripts/dashboard.js"></script>
+        <!-- SEO Meta Tags-->
+    <meta name="description" content="Silicon - Multipurpose Technology Bootstrap Template">
+    <meta name="keywords" content="bootstrap, business, creative agency, construction, services, e-commerce, shopping cart, mobile app showcase, multipurpose, shop, ui kit, marketing, seo, landing, html5, css3, javascript, gallery, slider, touch, creative">
+    <meta name="author" content="Createx Studio">
+
+    <!-- Viewport-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Theme switcher (color modes) -->
+    <script src="assets/js/theme-switcher.js"></script>
+
+    <!-- Favicon and Touch Icons-->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicon/site.webmanifest">
+    <link rel="mask-icon" href="assets/favicon/safari-pinned-tab.svg" color="#6366f1">
+    <link rel="shortcut icon" href="assets/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#080032">
+    <meta name="msapplication-config" content="assets/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Vendor Styles-->
+    <link rel="stylesheet" media="screen" href="/test/style1.css">
+    <link rel="stylesheet" media="screen" href="/test/style2.css">
+</head>
+<body>
+
+    <header>
+
+        <div class="logo-box">
+            <img src="/assets/images/logoo.png" alt="Logo" width="60", style="color:#fff">
+        </div>
+         <p class="fs-lg pb-2 pb-md-3 pb-lg-0 mb-4 mb-lg-5" style="color: #fff;">Welcome Sinenhlanhla Masuku.</p>
+
+    </header>
+
+    <main>
+
+        <div class="nav-bar">
+            <div class="nav-btn-box">
+                <input type="button" value="Home" class="btn" id="home-button">
+            </div>
+            <div class="nav-btn-box">
+                <input type="button" value="Profile" class="btn" id="profile-button">
+            </div>
+           <!-- <div class="nav-btn-box">
+                <input type="button" value="transation" class="btn" id="help-button">
+            </div> -->
+            <div class="nav-btn-box">
+                <input type="button" value="AI Tutor" class="btn" id="help-button" onclick="redirectToTransactionPage()">
+            </div>
+        
+            <script>
+                function redirectToTransactionPage() {
+                    // Redirect to another page when the button is clicked
+                    window.location.href = '..//test/test.html';
+                }
+            </script>
+
+           <div class="nav-btn-box">
+                <input type="button" value="Contact Us" class="btn" id="about-button">
+            </div> 
+			
+
+            <div class="nav-btn-box">
+                <input type="button" value="Logout" class="btn" id="logout-button">
+            </div>
+        </div>
+		
+        
+        </div>
+        
+
+        <!-- Landings (Grid) -->
+      <section id="landings" class="container text-center pt-5 mt-2 mt-md-4 mt-lg-5">
+
+       <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3"  style="margin-top: 5%;">
+  <div class="col card-hover shadow-none bg-none position-relative mb-4 mb-lg-5">
+    <img src="../img/ai tutor2.jfif" class="b-block border rounded-3 shadow-sm" alt="Mobile App Showcase v.1">
+    <h3 class="h5 mt-4 mb-3 mb-lg-0">
+      <a href="landing-mobile-app-showcase-v1.html" class="stretched-link">AI TUTOR</a>
+    </h3>
+  </div>
+  <div class="col card-hover shadow-none bg-none position-relative mb-4 mb-lg-5" style="margin-top: -82%; padding-left:160%">
+    <img src="../img/careerGuide.jfif" class="b-block border rounded-3 shadow-sm" alt="Mobile App Showcase v.2">
+    <h3 class="h5 mt-4 mb-3 mb-lg-0">
+      <a href="landing-mobile-app-showcase-v2.html" class="stretched-link">SUBJECTS</a>
+    </h3>
+  </div>
+</div>
+<div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3">
+  <div class="col card-hover shadow-none bg-none position-relative mb-4 mb-lg-5"style="padding-left:160%;margin-top: 14%">
+    <img src="../img/games.jfif" class="b-block border rounded-3 shadow-sm" alt="Mobile App Showcase v.3">
+    <h3 class="h5 mt-4 mb-3 mb-lg-0">
+      <a href="landing-mobile-app-showcase-v3.html" class="stretched-link">GAMES<span class="badge bg-success fs-xs ms-2"></span></a>
+    </h3>
+  </div>
+  <div class="col card-hover shadow-none bg-none position-relative mb-4 mb-lg-5" style="margin-top: -60%;">
+    <img src="../img/study_Material.jfif" class="b-block border rounded-3 shadow-sm" alt="Product Landing">
+    <h3 class="h5 mt-4 mb-3 mb-lg-0">
+      <a href="landing-product.html" class="d-flex justify-content-center align-items-center stretched-link">STUDY MATERIAL</a>
+    </h3>
+  </div>
+</div>
+
+
+
+
+
+    </main>
+    
+</body>
+</html>

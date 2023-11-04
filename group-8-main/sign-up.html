@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learners Signin</title>
+    <link rel="stylesheet" href="signin.css">
+    <script defer src="sign-up.js"></script>
+</head>
+<body>
+
+    <header>
+
+        
+        <button type="button" class="back"><a href="./CustomerForm.html">Back</a></button>
+
+    </header>
+
+    <main>
+
+        <!-- <div class="msg-box">
+            <img src="/assets/images/logo.png" alt="Logo" width="150">
+            <h2>A way to safer and cleaner water</h2>
+        </div> -->
+
+        <form action="./sign-in.html" id="loginForm" class="form" style="transform: scale(0.95);">
+
+            <img src="img/download.png" alt="Logo" width="80">
+
+            <label for="name">Name</label>
+            <input type="text" name="" id="name" class="input" autocomplete="off">
+
+            <label for="surname">Surname</label>
+            <input type="text" name="" id="surname" class="input" autocomplete="off">
+
+            <label for="email">Email</label>
+            <input type="email" name="" id="email" class="input" autocomplete="off" required="@gmail.com">
+
+            <label for="name">School Name</label>
+            <input type="text" name="" id="text" class="input" autocomplete="off">
+
+            <label for="password">Password</label>
+            <input type="password" name="" id="password" class="input">
+
+            <input type="submit" value="Sign Up" id="sign-up-btn" class="btn type1-btn">
+            
+
+
+        </form>
+
+    </main>
+    
+</body>
+<script>
+    // Function to handle form submission
+    function handleSignUp(event) {
+      event.preventDefault();  // Prevents the default form submission behavior
+      alert('Successfully registered!');
+    }
+
+    // Get the button element by its ID
+    const signUpButton = document.getElementById('sign-up-btn');
+
+    // Attach an event listener to the button
+    signUpButton.addEventListener('click', handleSignUp);
+
+
+    const loginForm = document.getElementById('loginForm');
+    const errorMessage = document.getElementById('error-message');
+
+    loginForm.addEventListener('submit', function(event) {
+      event.preventDefault();
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+
+      // Simple email validation (check if it ends with '@gmail.com')
+      if (!email.endsWith('@gmail.com')) {
+        errorMessage.textContent = 'Only Gmail email addresses are allowed.';
+        errorMessage.style.display = 'block';
+        return;
+      }
+    });
+
+  </script>
+</html>

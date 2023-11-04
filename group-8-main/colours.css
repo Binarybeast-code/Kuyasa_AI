@@ -1,0 +1,150 @@
+body {
+    background-color: white;
+    background-size: cover;
+    min-height: 100%;
+   display: flex;
+   flex-direction: column;
+  }
+
+  html{
+   height: 100%;
+   position: fixed;
+   width: 100%;
+}
+  
+  fieldset {
+      /* width: 00px;
+       margin: 0 auto;
+       margin-top: 100px;
+       background-color: rgb(91, 135, 201);
+       padding: 50px;
+       border-radius: 5px;
+       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);*/
+
+
+       max-width: 800px;
+       margin:0 auto;
+       border-radius: 5px;
+       padding:20px;
+       background-color: rgb(91, 135, 201);
+       box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+       
+   
+  }
+
+  .file {
+    float: right;
+  }
+
+  .container {
+
+       font-family: Arial, Helvetica, sans-serif;
+           text-align: center;
+       padding: 30px;
+       background-color: charcoal;
+       max-width: 800px;
+       margin: 0 auto;
+       box-shadow: 0 0 10px rgb(10, 7, 7);
+
+   }
+
+   h1 {
+       text-align: center;
+       text-decoration: underline;
+   }
+
+   h2{
+       margin-top :10px;
+       background-color: light-green;
+       color: rgb(37, 36, 36);
+   }
+   
+   
+   button {
+       background-color: #4623df;
+       color: white;
+       padding: 12px 20px;
+       margin: 8px 0;
+       border: none;
+       border-radius: 3px;
+       cursor: pointer;
+       width: 30%;
+   }
+
+   nav a{
+       text-decoration: none;
+       color: rgb(7, 6, 6);
+       border-radius: 5px;
+       text-align: right;
+       margin: 20px;
+       padding: 8px;
+       float: right;
+   }
+
+   button:hover {
+       background-color: gray;
+       color: white;
+   }
+
+   a:hover {
+       background-color: black;
+       color: white;
+   }
+
+   /* Footer styles */
+footer {
+color: #fff;
+text-align: center;
+margin-top: auto;
+}
+
+.footer-content {
+display: flex;
+justify-content: space-between;
+position: sticky;
+
+}
+
+.footer-content ul {
+list-style-type: none;
+}
+
+.footer-content ul li {
+margin-bottom: 10px;
+}
+
+.testimonials {
+padding: 30px 0;
+}
+
+.testimonials h2 {
+font-size: 24px;
+}
+
+.testimonial p {
+font-size: 16px;
+}
+
+.testimonial cite {
+font-size: 14px;
+}
+
+.cta {
+padding: 30px   0;
+}
+
+.cta h2 {
+font-size: 24px;
+}
+
+.cta p {
+font-size: 16px;
+}
+
+footer {
+padding: 10px 0;
+}
+
+.footer-content {
+flex-direction: column;
+}

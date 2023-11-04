@@ -1,0 +1,470 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url("sol.jpg");
+    background-size: cover;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+html{
+    height: 100%;
+}
+header {
+    background-color: rgb(50, 130, 205);
+    color: #fff;
+    padding: 10px 0;
+}
+
+
+nav{
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     padding-top: 45px;
+     padding-left: 8%;
+     padding-right: 8%;
+}
+.logo{
+
+    color: white;
+    font-size: 35px;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+span{
+    color: yellow;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    list-style-type: none;
+    display: inline-block;
+    padding: 10px 25px;
+}
+nav ul li a {
+    
+    color: #fff; 
+    text-decoration: none; 
+    font-weight: bold; 
+    text-transform: capitalize;
+}
+
+nav ul li a:hover{
+    color: yellow;
+    transition: .4s;
+   
+}
+footer {
+    background-color: #fc0a0a;
+    color: #fff;
+    padding: 10px 0;
+    width: 100%;
+    text-align: center;
+}
+
+ul li ul.dropdown li{
+    display: block;
+}
+
+ul li ul.dropdown{
+    width: 100px;
+    position: absolute;
+    z-index: 999;
+    display: none;
+}
+
+ul li a:hover{
+    
+}
+
+ul li:hover ul.dropdown{
+    display: block;
+}
+
+heads{
+    background-color: rgb(50, 143, 205);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.transaction, .meter{
+    padding: 5px;
+}
+.spacer{
+    flex-grow: 1;
+}
+
+.button-container{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.button{
+    padding:  10px 20px;
+    margin: 40px 90px;
+    background-color: yellow;
+    color: black;
+    border: none;
+    cursor: pointer;
+}
+
+.proceedButton{
+    text-align: center;
+    margin-top: 80px;
+    width: 7%;
+    
+    
+}
+
+/* ... Existing styles ... */
+
+.checkbox-list li {
+    display: flex;
+    align-items: center;
+    margin: 30px 60px;
+    font-size: 20px;
+}
+
+.checkbox {
+    margin-right: 10px;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #33ff00; /* Checkbox border color */
+    border-radius: 50%; /* Make it circular */
+    outline: none;
+    cursor: pointer;
+}
+
+.checkbox:checked {
+    background-color: #bbff00; /* Checkbox background color when checked */
+}
+
+.checkbox + label {
+    cursor: pointer;
+}
+
+/* ... Existing styles ... */
+
+
+
+#proceedButton {
+    display: block;
+    margin: 20px auto; /* Center horizontally with top margin */
+}
+
+.info li{
+
+    display: flex;
+    align-items: center;
+    margin: 10px 60px;
+    font-size: 20px;
+
+}
+
+body, h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+}
+/* Testimonials section styles */
+.testimonials {
+    background-color: #fff;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.testimonials h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.testimonial {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 600px;
+    background-color: #f9f9f9;
+}
+
+.testimonial p {
+    font-size: 18px;
+}
+
+.testimonial cite {
+    font-style: italic;
+}
+
+/* CTA section styles */
+.cta {
+    background-color: #007bff;
+    color: #fff;
+    text-align: center;
+    padding: 50px 0;
+}
+
+.cta h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.cta p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* Footer styles */
+footer {
+    background-color: #333;
+    margin-top: auto;
+}
+
+.footer-content {
+    color: #fff;
+    text-align: center;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    position: sticky;
+    
+}
+
+.footer-content ul {
+    list-style-type: none;
+}
+
+.footer-content ul li {
+    margin-bottom: 10px;
+}
+
+.testimonials {
+    padding: 30px 0;
+}
+
+.testimonials h2 {
+    font-size: 24px;
+}
+
+.testimonial p {
+    font-size: 16px;
+}
+
+.testimonial cite {
+    font-size: 14px;
+}
+
+.cta {
+    padding: 30px   0;
+}
+
+.cta h2 {
+    font-size: 24px;
+}
+
+.cta p {
+    font-size: 16px;
+}
+
+footer {
+    padding: 10px 0;
+}
+
+.footer-content {
+    flex-direction: column;
+}
+
+/* Contact form styles */
+.contact-form {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 600px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.contact-form h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.contact-form p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+/* Form styles */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+textarea {
+    resize: vertical;
+    height: 150px;
+}
+
+/* Submit button styles */
+button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.about-us {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.about-us h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.about-us p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+/* Team member styles */
+.team-member {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.team-member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.team-member h3 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.team-member p {
+    font-size: 16px;
+}
+
+/* Mission and Values styles */
+.mission h2,
+.values h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.mission p,
+.values ul {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.values ul li {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+/* Achievements styles */
+.achievements h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.achievements p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* Testimonials styles */
+.testimonials h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.testimonial {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 600px;
+    background-color: #f9f9f9;
+}
+
+.testimonial p {
+    font-size: 18px;
+}
+
+.testimonial cite {
+    font-style: italic;
+}
+
+#popup-message {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
